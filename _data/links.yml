@@ -1,0 +1,19 @@
+- url: https://pi.hamuzadesu.dev/
+  displayName: Pi
+  state: unfinished
+
+- url: https://raindrops.hamuzadesu.dev/
+  displayName: Raindrops
+  state: finished
+
+- url: https://string-reverser.hamuzadesu.dev/
+  displayName: String Reverser
+  state: finished
+
+- url: https://wordoftheday.hamuzadesu.dev/
+  displayName: Word Of the Day
+  state: finished
+
+- url: https://hamuzadesu.dev/
+  displayName: Main Website
+  state: finished
