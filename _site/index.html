@@ -30,6 +30,23 @@
             padding: 10px;
 
             border-bottom: 1px solid rgba(211, 47, 47, 0.5);
+            /* box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1); */
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+
+            transform: scale(1);
+
+            transition: all 100ms linear;
+        }
+        .item:hover{
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+            transform: scale(1.05);
+            /* box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1); */
+
+        }
+        .item:active{
+            box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.1);
+            transform: scale(1);
+
         }
         .btn{
             color: black;
@@ -47,46 +64,50 @@
         .state{
             text-transform: capitalize;
         }
+        a, small{
+            text-decoration: none;
+            color: #000;
+        }
     </style>
 </head>
 <body>
     <div class="screen">
         <div class="container">
             
-
-                <div class="item">
-                    <small class="state">unfinished:</small>
-                    <a class="btn unfinished" href="https://pi.hamuzadesu.dev/" target="_blank">Pi</a>
-                </div class="item">
-                
+                <a href="https://pi.hamuzadesu.dev/" target="_blank">
+                    <div class="item">
+                        <small class="state">unfinished:</small>
+                        <span class="">Pi</span>
+                    </div class="item">
+                </a>
             
-
-                <div class="item">
-                    <small class="state">finished:</small>
-                    <a class="btn finished" href="https://raindrops.hamuzadesu.dev/" target="_blank">Raindrops</a>
-                </div class="item">
-                
+                <a href="https://raindrops.hamuzadesu.dev/" target="_blank">
+                    <div class="item">
+                        <small class="state">finished:</small>
+                        <span class="">Raindrops</span>
+                    </div class="item">
+                </a>
             
-
-                <div class="item">
-                    <small class="state">finished:</small>
-                    <a class="btn finished" href="https://string-reverser.hamuzadesu.dev/" target="_blank">String Reverser</a>
-                </div class="item">
-                
+                <a href="https://string-reverser.hamuzadesu.dev/" target="_blank">
+                    <div class="item">
+                        <small class="state">finished:</small>
+                        <span class="">String Reverser</span>
+                    </div class="item">
+                </a>
             
-
-                <div class="item">
-                    <small class="state">finished:</small>
-                    <a class="btn finished" href="https://wordoftheday.hamuzadesu.dev/" target="_blank">Word Of the Day</a>
-                </div class="item">
-                
+                <a href="https://wordoftheday.hamuzadesu.dev/" target="_blank">
+                    <div class="item">
+                        <small class="state">finished:</small>
+                        <span class="">Word Of the Day</span>
+                    </div class="item">
+                </a>
             
-
-                <div class="item">
-                    <small class="state">finished:</small>
-                    <a class="btn finished" href="https://hamuzadesu.dev/" target="_blank">Main Website</a>
-                </div class="item">
-                
+                <a href="https://hamuzadesu.dev/" target="_blank">
+                    <div class="item">
+                        <small class="state">finished:</small>
+                        <span class="">Main Website</span>
+                    </div class="item">
+                </a>
             
 
         </div>

@@ -32,6 +32,23 @@
             padding: 10px;
 
             border-bottom: 1px solid rgba(211, 47, 47, 0.5);
+            /* box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1); */
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+
+            transform: scale(1);
+
+            transition: all 100ms linear;
+        }
+        .item:hover{
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+            transform: scale(1.05);
+            /* box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1); */
+
+        }
+        .item:active{
+            box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.1);
+            transform: scale(1);
+
         }
         .btn{
             color: black;
@@ -49,18 +66,22 @@
         .state{
             text-transform: capitalize;
         }
+        a, small{
+            text-decoration: none;
+            color: #000;
+        }
     </style>
 </head>
 <body>
     <div class="screen">
         <div class="container">
             {% for item in site.data.links %}
-
-                <div class="item">
-                    <small class="state">{{ item.state }}:</small>
-                    <a class="btn {{ item.state }}" href="{{ item.url }}" target="_blank">{{ item.displayName }}</a>
-                </div class="item">
-                
+                <a href="{{ item.url }}" target="_blank">
+                    <div class="item">
+                        <small class="state">{{ item.state }}:</small>
+                        <span class="">{{ item.displayName }}</span>
+                    </div class="item">
+                </a>
             {% endfor %}
 
         </div>
