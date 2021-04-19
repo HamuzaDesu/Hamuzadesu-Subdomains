@@ -1,19 +1,26 @@
 - url: https://pi.hamuzadesu.dev/
   displayName: Pi
   state: unfinished
+  animationStaggerOrder: 1
 
 - url: https://raindrops.hamuzadesu.dev/
   displayName: Raindrops
   state: finished
+  animationStaggerOrder: 2
 
 - url: https://string-reverser.hamuzadesu.dev/
   displayName: String Reverser
   state: finished
+  animationStaggerOrder: 3
+
 
 - url: https://wordoftheday.hamuzadesu.dev/
   displayName: Word Of the Day
   state: finished
+  animationStaggerOrder: 4
+
 
 - url: https://hamuzadesu.dev/
   displayName: Main Website
   state: finished
+  animationStaggerOrder: 5

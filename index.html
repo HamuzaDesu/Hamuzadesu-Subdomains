@@ -9,6 +9,10 @@
     
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
+        :root{
+            --background-colour: #f5f5f5;
+            --underline-colour: rgba(211, 47, 47, 0.5);
+        }
         * {
             margin: 0%;
             padding: 0%;
@@ -16,7 +20,7 @@
         .screen{
             height: 100vh;
             width: 100vw;
-            background-color: #f5f5f5;
+            background-color: var(--background-colour);
             
             display: flex;
             justify-content: center;
@@ -28,16 +32,24 @@
             /* font-size: 1.5rem; */
         }
         .item{
+            opacity: 0;
             margin: 10px;
             padding: 10px;
 
-            border-bottom: 1px solid rgba(211, 47, 47, 0.5);
+            border-bottom: 1px solid var(--underline-colour);
             /* box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1); */
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 
             transform: scale(1);
 
             transition: all 100ms linear;
+
+            animation-name: fadeInFromUp;
+            animation-duration: 1s;
+            animation-iteration-count: 1;
+            animation-timing-function: ease;
+            animation-fill-mode: forwards;
+            animation-delay: calc(var(--order) * 100ms);
         }
         .item:hover{
             box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
@@ -49,6 +61,16 @@
             box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.1);
             transform: scale(1);
 
+        }
+        @keyframes fadeInFromUp {
+            from{
+                opacity: 0;
+                transform: translateY(-100%);
+            }
+            to{
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         .btn{
             color: black;
@@ -70,6 +92,25 @@
             text-decoration: none;
             color: #000;
         }
+        .socials{
+            margin-top: 20px;
+            animation: fadeInFromDown 1s forwards ease;
+        }
+        .github{
+            text-decoration: underline;
+            color: rgba(211, 47, 47, 1);
+        }
+        @keyframes fadeInFromDown{
+            from{
+                opacity: 0;
+                transform: translateY(100%);
+            }
+            to{
+                opacity: 1;
+                transform: translateY(0);
+
+            }
+        }
     </style>
 </head>
 <body>
@@ -77,13 +118,17 @@
         <div class="container">
             {% for item in site.data.links %}
                 <a href="{{ item.url }}" target="_blank">
-                    <div class="item">
+                    <div class="item" style="--order: {{ item.animationStaggerOrder }}">
                         <small class="state">{{ item.state }}:</small>
                         <span class="">{{ item.displayName }}</span>
                     </div class="item">
                 </a>
             {% endfor %}
 
+            {% assign socialStagger = site.data.links[-1].animationStaggerOrder | plus: 1 %}
+            <div class="socials" style="--order: {{ socialStagger }}">
+                <p class="socials">Check out my <a href="https://github.com/HamuzaDesu" class="github" target="_blank">GitHub</a></p>
+            </div>
         </div>
     </div>
 </body>
